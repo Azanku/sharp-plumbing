@@ -1,13 +1,19 @@
+import Image from 'next/image'
 import ContactForm from './ContactForm'
 
 export default function Hero() {
   return (
-    <section className="relative min-h-[600px] lg:min-h-[700px] flex items-center bg-gradient-to-r from-sharp-navy via-sharp-blue to-sharp-navy">
-      {/* Background Pattern */}
-      <div className="absolute inset-0 opacity-10">
-        <div className="absolute inset-0" style={{
-          backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.4'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
-        }}></div>
+    <section className="relative min-h-[600px] lg:min-h-[700px] flex items-center">
+      {/* Background Image */}
+      <div className="absolute inset-0">
+        <Image
+          src="/images/hero-bg.jpg"
+          alt="Plumbing Services"
+          fill
+          className="object-cover"
+          priority
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-sharp-navy/95 via-sharp-navy/85 to-sharp-navy/70"></div>
       </div>
 
       {/* Content */}
@@ -57,6 +63,17 @@ export default function Hero() {
                 </svg>
                 (816) 207-3561
               </a>
+            </div>
+
+            {/* Google Guarantee Badge */}
+            <div className="mt-8 animate-fade-in-up animation-delay-500">
+              <Image
+                src="/images/google-guarantee.jpg"
+                alt="Google Guaranteed"
+                width={180}
+                height={60}
+                className="h-16 w-auto rounded-lg"
+              />
             </div>
           </div>
 

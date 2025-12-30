@@ -1,28 +1,27 @@
+import Image from 'next/image'
+
 const brands = [
-  // Plumbing Brands
-  { name: 'MOEN', category: 'plumbing' },
-  { name: 'DELTA', category: 'plumbing' },
-  { name: 'KOHLER', category: 'plumbing' },
-  { name: 'GERBER', category: 'plumbing' },
-  { name: 'American Standard', category: 'plumbing' },
-  // Water Heater Brands
-  { name: 'STATE', category: 'water-heater' },
-  { name: 'Bradford White', category: 'water-heater' },
-  { name: 'Navien', category: 'water-heater' },
-  { name: 'Rinnai', category: 'water-heater' },
-  { name: 'Rheem', category: 'water-heater' },
-  { name: 'RUUD', category: 'water-heater' },
-  // HVAC Brands
-  { name: 'DAIKIN', category: 'hvac' },
-  { name: 'LENNOX', category: 'hvac' },
-  { name: 'YORK', category: 'hvac' },
-  { name: 'AMANA', category: 'hvac' },
-  { name: 'Goodman', category: 'hvac' },
-  { name: 'TRANE', category: 'hvac' },
-  { name: 'Bryant', category: 'hvac' },
-  { name: 'Carrier', category: 'hvac' },
-  { name: 'Coleman', category: 'hvac' },
-  { name: 'HEIL', category: 'hvac' },
+  { name: 'Moen', logo: '/images/brands/moen.png' },
+  { name: 'Delta', logo: '/images/brands/delta.png' },
+  { name: 'Kohler', logo: '/images/brands/kohler.png' },
+  { name: 'Gerber', logo: '/images/brands/gerber.jpg' },
+  { name: 'State', logo: '/images/brands/state.jpg' },
+  { name: 'Bradford White', logo: '/images/brands/bradford-white.png' },
+  { name: 'Navien', logo: '/images/brands/navien.jpg' },
+  { name: 'Rinnai', logo: '/images/brands/rinnai.png' },
+  { name: 'Daikin', logo: '/images/brands/daikin.png' },
+  { name: 'Lennox', logo: '/images/brands/lennox.png' },
+  { name: 'York', logo: '/images/brands/york.jpg' },
+  { name: 'Amana', logo: '/images/brands/amana.png' },
+  { name: 'Goodman', logo: '/images/brands/goodman.jpg' },
+  { name: 'Trane', logo: '/images/brands/trane.png' },
+  { name: 'Bryant', logo: '/images/brands/bryant.png' },
+  { name: 'Carrier', logo: '/images/brands/carrier.png' },
+  { name: 'Rheem', logo: '/images/brands/rheem.png' },
+  { name: 'American Standard', logo: '/images/brands/american-standard.jpg' },
+  { name: 'Ruud', logo: '/images/brands/ruud.png' },
+  { name: 'Coleman', logo: '/images/brands/coleman.png' },
+  { name: 'Heil', logo: '/images/brands/heil.png' },
 ]
 
 export default function BrandsSection() {
@@ -41,15 +40,19 @@ export default function BrandsSection() {
         
         {/* Brands Grid */}
         <div className="bg-white rounded-3xl shadow-lg p-8 border border-gray-100">
-          <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-7 gap-4">
+          <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-7 gap-6">
             {brands.map((brand, index) => (
               <div
                 key={index}
-                className="group flex items-center justify-center p-4 h-16 bg-gray-50 rounded-xl hover:bg-sharp-blue transition-all duration-300 cursor-default"
+                className="flex items-center justify-center p-4 h-20 bg-gray-50 rounded-xl hover:bg-white hover:shadow-md transition-all duration-300 border border-transparent hover:border-gray-200"
               >
-                <span className="font-bold text-gray-600 group-hover:text-white transition-colors text-center text-sm md:text-base whitespace-nowrap">
-                  {brand.name}
-                </span>
+                <Image
+                  src={brand.logo}
+                  alt={brand.name}
+                  width={120}
+                  height={60}
+                  className="max-h-12 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-300"
+                />
               </div>
             ))}
           </div>

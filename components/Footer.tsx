@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Image from 'next/image'
 
 const servingAreas = [
   'Kansas City Metropolitan Area',
@@ -38,8 +39,14 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* About */}
           <div>
-            <div className="text-2xl font-bold mb-4">
-              <span className="text-sharp-gold">Sharp</span> Plumbing
+            <div className="mb-4">
+              <Image
+                src="/images/logo.png"
+                alt="Sharp Plumbing"
+                width={200}
+                height={67}
+                className="h-16 w-auto"
+              />
             </div>
             <p className="text-blue-200 mb-4">
               Local, Family Owned Company since 1970. Serving Independence, MO and the Kansas City Metropolitan Area.

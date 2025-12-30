@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Image from 'next/image'
 
 export default function AboutSection() {
   return (
@@ -25,26 +26,31 @@ export default function AboutSection() {
             </Link>
           </div>
 
-          {/* Image/Video Side */}
+          {/* Image Side */}
           <div className="relative">
-            <div className="bg-gradient-to-br from-sharp-navy to-sharp-blue rounded-3xl overflow-hidden shadow-2xl aspect-video flex items-center justify-center">
-              <div className="text-center text-white p-8">
-                <div className="w-20 h-20 bg-sharp-gold rounded-full flex items-center justify-center mx-auto mb-6 cursor-pointer hover:scale-110 transition-transform shadow-lg">
-                  <svg className="w-10 h-10 text-sharp-navy ml-1" fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clipRule="evenodd" />
-                  </svg>
-                </div>
-                <h3 className="text-2xl font-bold mb-2">Learn more about</h3>
-                <h4 className="text-3xl font-bold text-sharp-gold">Sharp Plumbing</h4>
-                <p className="mt-4 text-blue-100 max-w-sm mx-auto">
-                  Serving Independence, MO Area with HVAC, gas line, drain, and sewer services since 1970.
-                </p>
-              </div>
+            <div className="rounded-3xl overflow-hidden shadow-2xl">
+              <Image
+                src="/images/about-image.jpg"
+                alt="Sharp Plumbing Team"
+                width={600}
+                height={450}
+                className="w-full h-auto object-cover"
+              />
+            </div>
+            
+            {/* Callout Logo Overlay */}
+            <div className="absolute -bottom-6 -left-6 bg-white rounded-2xl shadow-xl p-4">
+              <Image
+                src="/images/logo-callout.png"
+                alt="Sharp Plumbing"
+                width={150}
+                height={80}
+                className="h-16 w-auto"
+              />
             </div>
             
             {/* Decorative Elements */}
-            <div className="absolute -bottom-6 -left-6 w-24 h-24 bg-sharp-gold rounded-2xl -z-10"></div>
-            <div className="absolute -top-6 -right-6 w-32 h-32 bg-blue-100 rounded-full -z-10"></div>
+            <div className="absolute -top-6 -right-6 w-32 h-32 bg-sharp-gold/20 rounded-full -z-10"></div>
           </div>
         </div>
       </div>
