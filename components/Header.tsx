@@ -73,19 +73,16 @@ export default function Header() {
       </div>
 
       {/* Main Navigation */}
-      <nav className="bg-sharp-blue">
+      <nav className="bg-white border-b border-gray-200">
         <div className="container-custom">
           <div className="flex items-center justify-between">
             {/* Logo */}
-            <Link href="/" className="flex items-center py-4 mr-8">
-              <div className="flex flex-col items-center">
-                <img
-                  src="/images/logo.png"
-                  alt="Sharp Plumbing"
-                  className="h-20 w-auto"
-                />
-                <span className="text-white text-xs mt-1 hidden sm:block">Local, Family Owned Company since 1970</span>
-              </div>
+            <Link href="/" className="flex items-center py-3 mr-8">
+              <img
+                src="/images/logo.png"
+                alt="Sharp Plumbing"
+                className="h-16 w-auto"
+              />
             </Link>
 
             {/* Desktop Navigation */}
@@ -94,7 +91,7 @@ export default function Header() {
                 <div key={item.name} className="relative group">
                   <Link
                     href={item.href}
-                    className="flex items-center gap-1 text-white font-medium hover:bg-white/10 px-4 py-5 transition-colors"
+                    className="flex items-center gap-1 text-sharp-navy font-medium hover:text-sharp-blue px-4 py-5 transition-colors"
                   >
                     {item.name}
                     {(item.submenu || item.megaMenu) && (
@@ -107,13 +104,13 @@ export default function Header() {
                   {/* Mega Menu for Services */}
                   {item.megaMenu && (
                     <div className="absolute left-0 top-full opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 pt-0">
-                      <div className="bg-sharp-blue shadow-2xl py-6 px-8 min-w-[700px]">
+                      <div className="bg-white shadow-2xl py-6 px-8 min-w-[700px] border border-gray-100 rounded-lg">
                         <div className="grid grid-cols-3 gap-4">
                           {serviceCategories.map((service) => (
                             <Link
                               key={service.href}
                               href={service.href}
-                              className="flex items-center gap-2 text-white hover:text-sharp-gold py-2 transition-colors group/item"
+                              className="flex items-center gap-2 text-gray-700 hover:text-sharp-blue py-2 transition-colors group/item"
                             >
                               <span>{service.name}</span>
                               <svg className="w-3 h-3 opacity-0 group-hover/item:opacity-100 transition-opacity" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -129,12 +126,12 @@ export default function Header() {
                   {/* Regular Submenu */}
                   {item.submenu && (
                     <div className="absolute left-0 top-full opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 pt-0">
-                      <div className="bg-sharp-blue shadow-xl py-2 min-w-[200px]">
+                      <div className="bg-white shadow-xl py-2 min-w-[200px] border border-gray-100 rounded-lg">
                         {item.submenu.map((subitem) => (
                           <Link
                             key={subitem.name}
                             href={subitem.href}
-                            className="block px-4 py-2 text-white hover:bg-white/10 hover:text-sharp-gold transition-colors"
+                            className="block px-4 py-2 text-gray-700 hover:bg-gray-50 hover:text-sharp-blue transition-colors"
                           >
                             {subitem.name}
                           </Link>
@@ -148,7 +145,7 @@ export default function Header() {
 
             {/* Mobile Menu Button */}
             <button
-              className="lg:hidden p-4 text-white"
+              className="lg:hidden p-4 text-sharp-navy"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               aria-label="Toggle menu"
             >
@@ -164,7 +161,7 @@ export default function Header() {
 
           {/* Mobile Navigation */}
           {mobileMenuOpen && (
-            <div className="lg:hidden border-t border-white/20 py-4">
+            <div className="lg:hidden border-t border-gray-200 py-4">
               {navigationItems.map((item) => (
                 <div key={item.name}>
                   <button
@@ -175,7 +172,7 @@ export default function Header() {
                         setMobileMenuOpen(false)
                       }
                     }}
-                    className="flex items-center justify-between w-full py-3 px-2 text-white font-medium"
+                    className="flex items-center justify-between w-full py-3 px-2 text-sharp-navy font-medium"
                   >
                     <Link href={item.href} onClick={() => setMobileMenuOpen(false)}>
                       {item.name}
@@ -199,7 +196,7 @@ export default function Header() {
                         <Link
                           key={service.href}
                           href={service.href}
-                          className="block py-2 text-white/80 hover:text-sharp-gold"
+                          className="block py-2 text-gray-600 hover:text-sharp-blue"
                           onClick={() => setMobileMenuOpen(false)}
                         >
                           {service.name}
@@ -215,7 +212,7 @@ export default function Header() {
                         <Link
                           key={subitem.name}
                           href={subitem.href}
-                          className="block py-2 text-white/80 hover:text-sharp-gold"
+                          className="block py-2 text-gray-600 hover:text-sharp-blue"
                           onClick={() => setMobileMenuOpen(false)}
                         >
                           {subitem.name}
