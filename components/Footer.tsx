@@ -1,5 +1,4 @@
 import Link from 'next/link'
-import Image from 'next/image'
 
 const servingAreas = [
   'Kansas City Metropolitan Area',
@@ -40,11 +39,9 @@ export default function Footer() {
           {/* About */}
           <div>
             <div className="mb-4">
-              <Image
+              <img
                 src="/images/logo.png"
                 alt="Sharp Plumbing"
-                width={200}
-                height={67}
                 className="h-16 w-auto"
               />
             </div>

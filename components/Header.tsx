@@ -2,7 +2,6 @@
 
 import { useState } from 'react'
 import Link from 'next/link'
-import Image from 'next/image'
 
 const serviceCategories = [
   { name: 'AC Services', href: '/services/ac-services' },
@@ -78,14 +77,11 @@ export default function Header() {
         <div className="container-custom">
           <div className="flex items-center justify-between">
             {/* Logo */}
-            <Link href="/" className="flex items-center py-3">
-              <Image
+            <Link href="/" className="flex items-center py-2 mr-8">
+              <img
                 src="/images/logo.png"
                 alt="Sharp Plumbing"
-                width={140}
-                height={70}
-                className="h-16 w-auto bg-white rounded-md p-1"
-                priority
+                className="h-14 w-auto"
               />
             </Link>
 
