@@ -78,17 +78,15 @@ export default function Header() {
         <div className="container-custom">
           <div className="flex items-center justify-between">
             {/* Logo */}
-            <Link href="/" className="flex items-center py-2">
-              <div className="bg-white rounded-lg px-3 py-1 shadow-sm">
-                <Image
-                  src="/images/logo.png"
-                  alt="Sharp Plumbing"
-                  width={160}
-                  height={50}
-                  className="h-12 w-auto"
-                  priority
-                />
-              </div>
+            <Link href="/" className="flex items-center py-3">
+              <Image
+                src="/images/logo.png"
+                alt="Sharp Plumbing"
+                width={140}
+                height={70}
+                className="h-16 w-auto bg-white rounded-md p-1"
+                priority
+              />
             </Link>
 
             {/* Desktop Navigation */}
