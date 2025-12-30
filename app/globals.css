@@ -1,0 +1,144 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Open+Sans:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-heading: 'Poppins', system-ui, sans-serif;
+  --font-body: 'Open Sans', system-ui, sans-serif;
+  
+  --sharp-navy: #1e3a5f;
+  --sharp-navy-dark: #152a45;
+  --sharp-navy-light: #2d4a6f;
+  --sharp-gold: #f6b93b;
+  --sharp-gold-dark: #e5a82a;
+  --sharp-blue: #1e56a0;
+  --sharp-blue-light: #3b7dd8;
+  --sharp-light-blue: #e8f4fc;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+  font-family: var(--font-body);
+  background-color: #ffffff;
+  color: #333;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-sharp-gold hover:bg-sharp-gold-dark text-sharp-navy font-semibold py-3 px-6 rounded-lg transition-all duration-300 inline-flex items-center justify-center shadow-lg hover:shadow-xl;
+  }
+  
+  .btn-secondary {
+    @apply bg-sharp-navy hover:bg-sharp-navy-dark text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300 inline-flex items-center justify-center shadow-lg hover:shadow-xl;
+  }
+  
+  .btn-outline {
+    @apply border-2 border-sharp-navy text-sharp-navy hover:bg-sharp-navy hover:text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300 inline-flex items-center justify-center;
+  }
+  
+  .btn-outline-light {
+    @apply border-2 border-white text-white hover:bg-white hover:text-sharp-navy font-semibold py-3 px-6 rounded-lg transition-all duration-300 inline-flex items-center justify-center;
+  }
+  
+  .section-heading {
+    @apply text-3xl md:text-4xl lg:text-5xl font-bold text-sharp-navy mb-4;
+  }
+  
+  .section-subheading {
+    @apply text-sharp-blue font-semibold uppercase tracking-wider text-sm mb-2;
+  }
+  
+  .card {
+    @apply bg-white rounded-2xl shadow-lg p-6 transition-all duration-300 hover:shadow-2xl border border-gray-100;
+  }
+  
+  .input-field {
+    @apply w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-sharp-blue focus:border-transparent transition-all duration-300 text-gray-700;
+  }
+  
+  .container-custom {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+}
+
+/* Custom animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.6s ease-out forwards;
+}
+
+/* Staggered animation delays */
+.animation-delay-100 { animation-delay: 100ms; }
+.animation-delay-200 { animation-delay: 200ms; }
+.animation-delay-300 { animation-delay: 300ms; }
+.animation-delay-400 { animation-delay: 400ms; }
+.animation-delay-500 { animation-delay: 500ms; }
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--sharp-navy);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--sharp-navy-dark);
+}
+
+/* Service card hover effect */
+.service-card:hover .service-icon {
+  transform: scale(1.1);
+}
+
+/* Gradient backgrounds */
+.gradient-blue {
+  background: linear-gradient(135deg, #1e56a0 0%, #1e3a5f 100%);
+}
+
+.gradient-light {
+  background: linear-gradient(180deg, #f8fafc 0%, #e8f4fc 100%);
+}
