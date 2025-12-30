@@ -77,12 +77,15 @@ export default function Header() {
         <div className="container-custom">
           <div className="flex items-center justify-between">
             {/* Logo */}
-            <Link href="/" className="flex items-center py-2 mr-8">
-              <img
-                src="/images/logo.png"
-                alt="Sharp Plumbing"
-                className="h-14 w-auto"
-              />
+            <Link href="/" className="flex items-center py-4 mr-8">
+              <div className="flex flex-col items-center">
+                <img
+                  src="/images/logo.png"
+                  alt="Sharp Plumbing"
+                  className="h-20 w-auto"
+                />
+                <span className="text-white text-xs mt-1 hidden sm:block">Local, Family Owned Company since 1970</span>
+              </div>
             </Link>
 
             {/* Desktop Navigation */}
